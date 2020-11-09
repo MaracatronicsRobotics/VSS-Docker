@@ -34,7 +34,6 @@ docker run  -it \
             --volume="/etc/shadow:/etc/shadow:ro" \
             --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
             --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-            -e XDG_RUNTIME_DIR=/tmp
             -v $HOME/.Xauthority:/root/.Xauthority \
             $DOCKER_IMAGE
 
