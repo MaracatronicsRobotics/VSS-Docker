@@ -4,22 +4,37 @@
 
 See [this](https://docs.docker.com/engine/install/ubuntu/#installation-methods) link to install docker on your computer and clone this repository.
 
-## Running
-First, build the docker
+## Disabling docker sudo
+Just run this command
 
 ```
-sudo sh dockerbuild.sh
+sudo sh scripts/disableDockerSudo.sh
+```
+
+## Running
+**Remember to take our ``GIT_TOKEN`` key!**
+
+Build the Docker image giving as argument the ``GIT_TOKEN``
+
+```
+sh build.sh GIT_TOKEN
 ```
 
 After this, run it
 
 ```
-sudo sh dockerrun.sh
+sh run.sh
 ```
 
-Now, run the `suassuna.sh` to run all softwares
+Now, run the `updateRepo.sh` giving as argument the ``GIT_TOKEN`` and the desired repo ``BRANCH``
 
 ```
-# sudo sh suassuna.sh ip-actuator ip-multicast teamColor port-actuator port-vision port-referee port-replacer
-sudo sh suassuna.sh 127.0.0.1 224.5.23.2 yellow 20011 10002 10003 10004
+sh updateRepo.sh GIT_TOKEN BRANCH
+```
+
+After this, the software will build and you can simply run the binary file at ``bin`` folder
+
+```
+cd bin
+./Suassuna-VSS
 ```
