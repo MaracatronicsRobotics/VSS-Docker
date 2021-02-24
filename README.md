@@ -26,10 +26,10 @@ After this, run it
 sh run.sh
 ```
 
-Now, run the `updateRepo.sh` giving as argument the ``GIT_TOKEN`` and the desired repo ``BRANCH``
+Now, run the `updateRepo.sh` giving as argument the desired branch ``BRANCH``
 
 ```
-sh updateRepo.sh GIT_TOKEN BRANCH
+sh updateRepo.sh BRANCH
 ```
 
 After this, the software will build and you can simply run the binary file at ``bin`` folder
