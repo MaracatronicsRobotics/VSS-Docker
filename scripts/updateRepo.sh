@@ -1,10 +1,10 @@
-# Store token and desired branch 
-GIT_TOKEN=$1
-REPO_BRANCH=$2
+# Store desired branch 
+REPO_BRANCH=$1
 
-# Checkout and pull repo
+# Fetch and checkout repo to desired branch
+git fetch --all
 git checkout $REPO_BRANCH
-git pull https://$GIT_TOKEN:x-oauth-basic@github.com/MaracatronicsRobotics/Suassuna-VSS.git
+git reset --hard origin/$REPO_BRANCH
 
 # Call compile
 sh compile.sh
